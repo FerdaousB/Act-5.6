@@ -2,14 +2,15 @@ package com.thp.simplecontext.service;
 
 import java.util.List;
 
-import com.thp.simplecontext.entity.Role;
+
+import com.thp.simplecontext.dto.RoleDTO;
 
 public interface RoleService {
 	
-	 public Role findRoleById(Long id);
-	 public List<Role> findAll();
-	 public void updateRole(Long id, Role role);
-     public void insertRole(Role role);
-	 public void deleteRole(Long id);
+	 public RoleDTO findRoleById(Long id);
+	 public List<RoleDTO> findAll();
+	 public RoleDTO updateRole(RoleDTO role);
+     public RoleDTO insertRole(RoleDTO role);
+	 public RoleDTO deleteRole(Long id);
 
 }

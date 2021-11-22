@@ -2,17 +2,27 @@ package com.thp.simplecontext.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thp.simplecontext.entity.Announcement;
+import com.thp.simplecontext.repository.AnnouncementRepository;
 import com.thp.simplecontext.service.AnnouncementService;
 
 @Service
 public class AnnouncementServiceImpl implements AnnouncementService {
 
+	@Autowired
+	AnnouncementRepository announcement  ;
+	
 	@Override
 	public List<Announcement> findAll() {
-		return null;
+		return announcement.findAll() ;
+	}
+	@Override
+	public void insertAnnouncement(Announcement annonce) {
+	
+		announcement.save(annonce);
 	}
 
 	@Override
@@ -40,10 +50,7 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 		return null;
 	}
 
-	@Override
-	public void insertAnnouncement(Announcement annonce) {
-		
-	}
+	
 
 	@Override
 	public void updateAnnouncement(Announcement annonce, Long id) {

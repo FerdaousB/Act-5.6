@@ -2,7 +2,6 @@ package com.thp.simplecontext.entity;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Locale.Category;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -32,9 +31,7 @@ public class Announcement implements  Serializable{
 	@Column(name="description")    
 	private String description  ;
 	
-	@ManyToOne(fetch=FetchType.LAZY)  
-	@JoinColumn( name="id_category" )
-	private Category category;
+	
 	
 	@Column(name="price")
 	private double price;
@@ -60,13 +57,17 @@ public class Announcement implements  Serializable{
 	@JoinColumn( name="id_user" )
 	private User user;
 	
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn( name="id_category" )
+	private Category category;
+	
 	
 	public Announcement() {
 	}
 
 
 	public Announcement(Long id, String title, String description, double price, byte[] picture,
-	    String publication_date, boolean is_available, int view_number, String localisation, User user, Category category) {
+	    String publication_date, boolean is_available, int view_number, String localisation, User user,Category category) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -200,17 +201,13 @@ public class Announcement implements  Serializable{
 		this.localisation = localisation;
 	}
 
-	
-
-	
-
 	public Category getCategory() {
 		return category;
 	}
 
 
-	public void setCategory(Category categorie) {
-		this.category = categorie;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 

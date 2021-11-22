@@ -9,4 +9,7 @@ import com.thp.simplecontext.entity.Announcement;
 @Repository
 public interface AnnouncementRepository extends JpaRepository<Announcement, Long>{
 
+	
+	
+	
 }
