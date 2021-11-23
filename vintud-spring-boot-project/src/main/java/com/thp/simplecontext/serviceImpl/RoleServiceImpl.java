@@ -20,9 +20,9 @@ public class RoleServiceImpl implements RoleService{
 
 	
 	@Autowired
-	RoleRepository roleRepository  ;
+	private RoleRepository roleRepository  ;
 	
-	 	private ModelMapper modelMapper = new ModelMapper();
+	private ModelMapper modelMapper = new ModelMapper();
 
 	
 	
@@ -35,12 +35,9 @@ public class RoleServiceImpl implements RoleService{
 	
 	
 	@Override
-	public RoleDTO updateRole(RoleDTO roleDTO, Long roleId) {
-     
-		
-		roleDTO.setRoleId(roleId);
-		
-		return insertRole(roleDTO);
+	public RoleDTO updateRole(RoleDTO roleDTO) {
+	    
+		return updateRole(roleDTO);
 	}
 	
 	
@@ -48,9 +45,11 @@ public class RoleServiceImpl implements RoleService{
 	public RoleDTO findRoleById(Long roleId) {
 		
 		Optional<Role> roleRendred = roleRepository.findById(roleId);
-      	RoleDTO roleDTORendred =modelMapper.map(roleRendred.get(), RoleDTO.class);	
+		if(roleRendred.isPresent()) {
+			return modelMapper.map(roleRendred.get(), RoleDTO.class);	
+		}
 
-		return roleDTORendred ;
+		return null ;
 	}
 	
 	@Override

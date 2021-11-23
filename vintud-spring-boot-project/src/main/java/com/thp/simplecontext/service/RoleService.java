@@ -11,7 +11,7 @@ public interface RoleService {
 	 
 	 public List<RoleDTO> findAll();
 	 
-	 public RoleDTO updateRole( RoleDTO roleDTO, Long roleId );
+	 public RoleDTO updateRole( RoleDTO roleDTO);
 	 
      public RoleDTO insertRole(RoleDTO role);
      
