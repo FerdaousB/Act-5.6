@@ -19,8 +19,8 @@ public class User implements Serializable {
 
 		@Id 
         @GeneratedValue(strategy=GenerationType.AUTO) 
-        @Column(name="id_user")
-		private Long id ;
+        @Column(name="userId")
+		private Long userId ;
 	    
 	    @Column(name="firstname")
 	  
@@ -35,8 +35,8 @@ public class User implements Serializable {
 	    @Column(name="mail")
 		private String mail ;
 	    
-	    @Column(name="u_password")
-		private String u_password  ;
+	    @Column(name="userPassword")
+		private String userPassword  ;
 	    
 	    @Column(name="phone")
 	    
@@ -46,7 +46,7 @@ public class User implements Serializable {
 		private String address  ;
 	    
 	    @ManyToOne  
-		@JoinColumn( name="id_role" )
+		@JoinColumn( name="roleId" )
 		private Role role ;
 		
 	    
@@ -61,14 +61,14 @@ public class User implements Serializable {
 
 
 
-		public User(Long id, String firstname, String name, String pseudo, String mail, String u_password, String phone,
+		public User(Long userId, String firstname, String name, String pseudo, String mail, String userPassword, String phone,
 				String address, Role role) {
-			this.id = id;
+			this.userId = userId;
 			this.firstname = firstname;
 			this.name = name;
 			this.pseudo = pseudo;
 			this.mail = mail;
-			this.u_password = u_password;
+			this.userPassword = userPassword;
 			this.phone = phone;
 			this.address = address;
 			this.role=role;
@@ -79,16 +79,16 @@ public class User implements Serializable {
 
 
 
-		public Long getId() {
-			return id;
+		public Long getUserId() {
+			return userId;
 		}
 
 
 
 
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 
 
@@ -159,16 +159,16 @@ public class User implements Serializable {
 
 
 
-		public String getU_password() {
-			return u_password;
+		public String getUserPassword() {
+			return userPassword;
 		}
 
 
 
 
 
-		public void setU_password(String u_password) {
-			this.u_password = u_password;
+		public void setUserPassword(String userPassword) {
+			this.userPassword = userPassword;
 		}
 
 
@@ -208,8 +208,8 @@ public class User implements Serializable {
 
 		@Override
 		public String toString() {
-			return "User [id=" + id + ", firstname=" + firstname + ", name=" + name + ", pseudo=" + pseudo + ", mail="
-					+ mail + ", u_password=" + u_password + ", phone=" + phone + ", address=" + address + "]";
+			return "User [userId=" + userId + ", firstname=" + firstname + ", name=" + name + ", pseudo=" + pseudo + ", mail="
+					+ mail + ", userPassword=" + userPassword + ", phone=" + phone + ", address=" + address + "]";
 		}
 		
 		

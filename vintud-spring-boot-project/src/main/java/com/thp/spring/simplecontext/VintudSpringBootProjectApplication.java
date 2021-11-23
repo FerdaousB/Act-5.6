@@ -17,11 +17,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages={"com.thp.simplecontext.repository"})
 public class VintudSpringBootProjectApplication {
 
-	 	
-
 	
 	public static void main(String[] args) {
 		SpringApplication.run(VintudSpringBootProjectApplication.class, args);	
 	}
+	
 
 }

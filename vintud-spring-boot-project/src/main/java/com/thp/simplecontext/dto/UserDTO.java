@@ -2,36 +2,36 @@ package com.thp.simplecontext.dto;
 
 public class UserDTO {
 
-	private int id ;
+	private Long userId ;
 	private String firstname ;
 	private String name ;
 	private String pseudo  ;
 	private String mail ;
-	private String u_password  ;
+	private String userPassword  ;
 	private String phone ;
 	private String address  ;
-	private int role_id  ;
-	public UserDTO(int id, String firstname, String name, String pseudo, String mail, String u_password, String phone,
-			String address, int role_id) {
+	private int roleId  ;
+	public UserDTO(Long userId, String firstname, String name, String pseudo, String mail, String userPassword, String phone,
+			String address, int roleId) {
 		super();
-		this.id = id;
+		this.userId = userId;
 		this.firstname = firstname;
 		this.name = name;
 		this.pseudo = pseudo;
 		this.mail = mail;
-		this.u_password = u_password;
+		this.userPassword = userPassword;
 		this.phone = phone;
 		this.address = address;
-		this.role_id = role_id;
+		this.roleId = roleId;
 	}
 	public UserDTO() {
 		super();
 	}
-	public int getId() {
-		return id;
+	public Long getUserId() {
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -57,11 +57,11 @@ public class UserDTO {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	public String getU_password() {
-		return u_password;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setU_password(String u_password) {
-		this.u_password = u_password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public String getPhone() {
 		return phone;
@@ -75,11 +75,11 @@ public class UserDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getRole_id() {
-		return role_id;
+	public int getRoleId() {
+		return roleId;
 	}
-	public void setRole_id(int role_id) {
-		this.role_id = role_id;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 	
 	

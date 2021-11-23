@@ -21,11 +21,11 @@ public class Recherche implements Serializable{
 
 		@Id 
         @GeneratedValue(strategy=GenerationType.AUTO) 
-        @Column(name="id_recherche")
-		private Long id ;
+        @Column(name="rechercheId")
+		private Long rechercheId ;
 	    
-	    @Column(name="type_habit")
-		private String type_habit ;
+	    @Column(name="typeHabit")
+		private String typeHabit ;
 	    
 	    @Column(name="taille")
 		private String taille ;
@@ -33,11 +33,11 @@ public class Recherche implements Serializable{
 	    @Column(name="couleur")
 		private String couleur ;
 	    
-	    @Column(name="fourchette_prix")
-		private float fourchette_prix ;
+	    @Column(name="fourchettePrix")
+		private float fourchettePrix ;
 	    
 	    @ManyToOne  
-		@JoinColumn( name="id_user" )
+		@JoinColumn( name="userId" )
 		private User user ;
 		
 		public Recherche() {
@@ -47,38 +47,38 @@ public class Recherche implements Serializable{
 
 		@Override
 		public String toString() {
-			return "Recherche [id=" + id + ", type_habit=" + type_habit + ", taille=" + taille + ", couleur=" + couleur
-					+ ", fourchette_prix=" + fourchette_prix +  "]";
+			return "Recherche [rechercheId=" + rechercheId + ", typeHabit=" + typeHabit + ", taille=" + taille + ", couleur=" + couleur
+					+ ", fourchettePrix=" + fourchettePrix +  "]";
 		}
 
 
-		public Recherche(Long id, String type_habit, String taille, String couleur, float fourchette_prix) {
-			this.id = id;
-			this.type_habit = type_habit;
+		public Recherche(Long rechercheId, String typeHabit, String taille, String couleur, float fourchettePrix) {
+			this.rechercheId = rechercheId;
+			this.typeHabit = typeHabit;
 			this.taille = taille;
 			this.couleur = couleur;
-			this.fourchette_prix = fourchette_prix;
+			this.fourchettePrix = fourchettePrix;
 		
 		}
 
 
-		public Long getId() {
-			return id;
+		public Long getRechercheId() {
+			return rechercheId;
 		}
 
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setRechercheId(Long rechercheId) {
+			this.rechercheId = rechercheId;
 		}
 
 
-		public String getType_habit() {
-			return type_habit;
+		public String getTypeHabit() {
+			return typeHabit;
 		}
 
 
-		public void setType_habit(String type_habit) {
-			this.type_habit = type_habit;
+		public void setTypeHabit(String typeHabit) {
+			this.typeHabit = typeHabit;
 		}
 
 
@@ -102,13 +102,13 @@ public class Recherche implements Serializable{
 		}
 
 
-		public float getFourchette_prix() {
-			return fourchette_prix;
+		public float getFourchettePrix() {
+			return fourchettePrix;
 		}
 
 
-		public void setFourchette_prix(float fourchette_prix) {
-			this.fourchette_prix = fourchette_prix;
+		public void setFourchettePrix(float fourchettePrix) {
+			this.fourchettePrix = fourchettePrix;
 		}
 
 

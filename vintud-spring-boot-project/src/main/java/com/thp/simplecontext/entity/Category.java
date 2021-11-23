@@ -18,7 +18,7 @@ public class Category implements Serializable{
 
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO) 
-    @Column(name="id_category")
+    @Column(name="categoryId")
 	private Long id ;
 	 
 	@Column(name="name")

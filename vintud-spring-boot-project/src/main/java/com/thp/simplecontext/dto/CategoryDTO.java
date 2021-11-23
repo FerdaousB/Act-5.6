@@ -3,23 +3,23 @@ package com.thp.simplecontext.dto;
 public class CategoryDTO {
 	
 	
-	private int id ;
+	private Long categoryId ;
 	private String name  ;
 	private String description  ;
-	public CategoryDTO(int id, String name, String description) {
+	public CategoryDTO(Long categoryId, String name, String description) {
 		super();
-		this.id = id;
+		this.categoryId = categoryId;
 		this.name = name;
 		this.description = description;
 	}
 	public CategoryDTO() {
 		super();
 	}
-	public int getId() {
-		return id;
+	public Long getCategoryId() {
+		return categoryId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
 	}
 	public String getName() {
 		return name;

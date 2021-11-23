@@ -2,35 +2,35 @@ package com.thp.simplecontext.dto;
 
 public class RechercheDTO {
 	
-	private int id ;
-	private String type_habit ;
+	private Long rechercheId ;
+	private String typeHabit ;
 	private String taille ;
 	private String couleur ;
-	private float fourchette_prix ;
-	private int user_id ;
-	public RechercheDTO(int id, String type_habit, String taille, String couleur, float fourchette_prix, int user_id) {
+	private float fourchettePrix ;
+	private int userId ;
+	public RechercheDTO(Long rechercheId, String typeHabit, String taille, String couleur, float fourchettePrix, int userId) {
 		super();
-		this.id = id;
-		this.type_habit = type_habit;
+		this.rechercheId = rechercheId;
+		this.typeHabit = typeHabit;
 		this.taille = taille;
 		this.couleur = couleur;
-		this.fourchette_prix = fourchette_prix;
-		this.user_id = user_id;
+		this.fourchettePrix = fourchettePrix;
+		this.userId = userId;
 	}
 	public RechercheDTO() {
 		super();
 	}
-	public int getId() {
-		return id;
+	public Long getRechercheId() {
+		return rechercheId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setRechercheId(Long rechercheId) {
+		this.rechercheId = rechercheId;
 	}
-	public String getType_habit() {
-		return type_habit;
+	public String getTypeHabit() {
+		return typeHabit;
 	}
-	public void setType_habit(String type_habit) {
-		this.type_habit = type_habit;
+	public void setTypeHabit(String typeHabit) {
+		this.typeHabit = typeHabit;
 	}
 	public String getTaille() {
 		return taille;
@@ -44,17 +44,17 @@ public class RechercheDTO {
 	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
-	public float getFourchette_prix() {
-		return fourchette_prix;
+	public float getFourchettePrix() {
+		return fourchettePrix;
 	}
-	public void setFourchette_prix(float fourchette_prix) {
-		this.fourchette_prix = fourchette_prix;
+	public void setFourchettePrix(float fourchettePrix) {
+		this.fourchettePrix = fourchettePrix;
 	}
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
 	

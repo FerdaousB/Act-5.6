@@ -4,44 +4,44 @@ import java.util.Arrays;
 
 public class AnnouncementDTO {
 	
-	private int id ;
+	private Long announceId ;
 	private String title;
 	private String description  ;
-	private int category_id;
+	private int categoryId;
 	private double price;
 	private byte[] picture;
-	private String publication_date ; 
-	private boolean  is_available;
-	private int view_number;
+	private String publicationDate ; 
+	private boolean  isAvailable;
+	private int viewNumber;
 	private String localisation;
-	private int user_id;
+	private int userId;
 	
-	public AnnouncementDTO(int id, String title, String description, int category_id, double price, byte[] picture,
-			String publication_date, boolean is_available, int view_number, String localisation, int user_id) {
+	public AnnouncementDTO(Long announceId, String title, String description, int categoryId, double price, byte[] picture,
+			String publicationDate, boolean isAvailable, int viewNumber, String localisation, int userId) {
 		super();
-		this.id = id;
+		this.announceId = announceId;
 		this.title = title;
 		this.description = description;
-		this.category_id = category_id;
+		this.categoryId = categoryId;
 		this.price = price;
 		this.picture = picture;
-		this.publication_date = publication_date;
-		this.is_available = is_available;
-		this.view_number = view_number;
+		this.publicationDate = publicationDate;
+		this.isAvailable = isAvailable;
+		this.viewNumber = viewNumber;
 		this.localisation = localisation;
-		this.user_id = user_id;
+		this.userId = userId;
 	}
 
 	public AnnouncementDTO() {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public Long getAnnounceId() {
+		return announceId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAnnounceId(Long id) {
+		this.announceId = id;
 	}
 
 	public String getTitle() {
@@ -60,12 +60,12 @@ public class AnnouncementDTO {
 		this.description = description;
 	}
 
-	public int getCategory_id() {
-		return category_id;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public double getPrice() {
@@ -84,28 +84,28 @@ public class AnnouncementDTO {
 		this.picture = picture;
 	}
 
-	public String getPublication_date() {
-		return publication_date;
+	public String getPublicationDate() {
+		return publicationDate;
 	}
 
-	public void setPublication_date(String publication_date) {
-		this.publication_date = publication_date;
+	public void setPublicationDate(String publicationDate) {
+		this.publicationDate = publicationDate;
 	}
 
-	public boolean isIs_available() {
-		return is_available;
+	public boolean isIsAvailable() {
+		return isAvailable;
 	}
 
-	public void setIs_available(boolean is_available) {
-		this.is_available = is_available;
+	public void setIsAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
 	}
 
-	public int getView_number() {
-		return view_number;
+	public int getViewNumber() {
+		return viewNumber;
 	}
 
-	public void setView_number(int view_number) {
-		this.view_number = view_number;
+	public void setViewNumber(int viewNumber) {
+		this.viewNumber = viewNumber;
 	}
 
 	public String getLocalisation() {
@@ -116,20 +116,20 @@ public class AnnouncementDTO {
 		this.localisation = localisation;
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
-		return "AnnouncementDTO [id=" + id + ", title=" + title + ", description=" + description + ", category_id="
-				+ category_id + ", price=" + price + ", picture=" + Arrays.toString(picture) + ", publication_date="
-				+ publication_date + ", is_available=" + is_available + ", view_number=" + view_number
-				+ ", localisation=" + localisation + ", user_id=" + user_id + "]";
+		return "AnnouncementDTO [announceId=" + announceId + ", title=" + title + ", description=" + description + ", categoryId="
+				+ categoryId + ", price=" + price + ", picture=" + Arrays.toString(picture) + ", publicationDate="
+				+ publicationDate + ", isAvailable=" + isAvailable + ", viewNumber=" + viewNumber
+				+ ", localisation=" + localisation + ", userId=" + userId + "]";
 	}
 
 	

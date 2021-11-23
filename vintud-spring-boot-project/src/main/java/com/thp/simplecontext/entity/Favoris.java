@@ -18,14 +18,14 @@ public class Favoris implements Serializable{
 
 		@Id 
         @GeneratedValue(strategy=GenerationType.AUTO) 
-        @Column(name="id_favoris")
+        @Column(name="favorisId")
 		private Long id;
 	    
 	    @ManyToOne  
-		@JoinColumn( name="id_announce" )
+		@JoinColumn( name="announceId" )
 		private Announcement announcement; 
 	    @ManyToOne  
-		@JoinColumn( name="id_user" )
+		@JoinColumn( name="userId" )
 		private User user ; 
 	    
 	    @Column(name="dateAjout")

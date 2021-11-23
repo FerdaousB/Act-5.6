@@ -3,37 +3,37 @@ package com.thp.simplecontext.dto;
 public class FavorisDTO {
 	
 
-	private int id;
-	private int announcement_id; 
-	private int user_id ; 
+	private Long favorisId;
+	private int announcementId; 
+	private int userId ; 
 	private String dateAjout;
-	public FavorisDTO(int id, int announcement_id, int user_id, String dateAjout) {
+	public FavorisDTO(Long favorisId, int announcementId, int userId, String dateAjout) {
 		super();
-		this.id = id;
-		this.announcement_id = announcement_id;
-		this.user_id = user_id;
+		this.favorisId = favorisId;
+		this.announcementId = announcementId;
+		this.userId = userId;
 		this.dateAjout = dateAjout;
 	}
 	public FavorisDTO() {
 		super();
 	}
-	public int getId() {
-		return id;
+	public Long getFavorisId() {
+		return favorisId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setFavorisId(Long favorisId) {
+		this.favorisId = favorisId;
 	}
-	public int getAnnouncement_id() {
-		return announcement_id;
+	public int getAnnouncementId() {
+		return announcementId;
 	}
-	public void setAnnouncement_id(int announcement_id) {
-		this.announcement_id = announcement_id;
+	public void setAnnouncementId(int announcementId) {
+		this.announcementId = announcementId;
 	}
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getDateAjout() {
 		return dateAjout;

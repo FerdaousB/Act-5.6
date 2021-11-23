@@ -1,7 +1,9 @@
 package com.thp.simplecontext.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -9,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.thp.simplecontext.dto.RoleDTO;
 import com.thp.simplecontext.entity.Role;
-import com.thp.simplecontext.mapper.EntityDtoMapper;
 import com.thp.simplecontext.repository.RoleRepository;
 import com.thp.simplecontext.service.RoleService;
 
@@ -20,24 +21,48 @@ public class RoleServiceImpl implements RoleService{
 	
 	@Autowired
 	RoleRepository roleRepository  ;
-	@Autowired
-	private EntityDtoMapper entityDtoMapper;
+	
+	 	private ModelMapper modelMapper = new ModelMapper();
+
 	
 	
 	@Override
-	public RoleDTO insertRole(RoleDTO roleDto) {
+	public RoleDTO insertRole(RoleDTO roleDTO) {
 		
-		Role role =entityDtoMapper.roleDtoToEntity(roleDto);
-		Role roleRendred = roleRepository.save(role);
-		RoleDTO RoleDtoRendred = entityDtoMapper.roleEntityToDTO(roleRendred);
-		return RoleDtoRendred;
+		return modelMapper.map(roleRepository.save(modelMapper.map(roleDTO,Role.class)),RoleDTO.class);
 		
 	}
+	
+	
 	@Override
-	public RoleDTO updateRole(RoleDTO role) {	
+	public RoleDTO updateRole(RoleDTO roleDTO, Long roleId) {
+     
 		
-		return null;
+		roleDTO.setRoleId(roleId);
+		
+		return insertRole(roleDTO);
 	}
+	
+	
+	@Override
+	public RoleDTO findRoleById(Long roleId) {
+		
+		Optional<Role> roleRendred = roleRepository.findById(roleId);
+      	RoleDTO roleDTORendred =modelMapper.map(roleRendred.get(), RoleDTO.class);	
+
+		return roleDTORendred ;
+	}
+	
+	@Override
+	public RoleDTO deleteRole( Long roleId) {
+		RoleDTO roleDTO = this.findRoleById(roleId);
+		roleRepository.deleteById(roleId); 
+        
+		 return roleDTO ;
+	}
+
+
+	
 
 	
 	
@@ -50,23 +75,27 @@ public class RoleServiceImpl implements RoleService{
 
 
 
-	@Override
-	public RoleDTO findRoleById(Long id) {
-
-		return null;
-	}
+	
 
 
 
 	
 
 
-	@Override
-	public RoleDTO deleteRole(Long id) {
+	
 
-		return null;
-	}
 
+
+
+
+
+
+
+
+
+
+
+	
 	
 	
 

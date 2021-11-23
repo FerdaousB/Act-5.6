@@ -23,8 +23,8 @@ public class Announcement implements  Serializable{
 	
 	@Id  //Indique qu'il s'agit de la clé primaire
     @GeneratedValue(strategy=GenerationType.AUTO) //Indique comment la clé doit être généré
-    @Column(name="id_announce")
-	private Long id ;
+    @Column(name="announceId")
+	private Long annonceId ;
 	
 	@Column(name="title")
 	private String title;
@@ -40,25 +40,25 @@ public class Announcement implements  Serializable{
       
 	private byte[] picture;
 	
-	@Column(name="publication_date")
+	@Column(name="publicationDate")
     
-	private String publication_date ; 
+	private String publicationDate ; 
 	
-	@Column(name="is_available")
-	private boolean  is_available;
+	@Column(name="isAvailable")
+	private boolean  isAvailable;
 	
-	@Column(name="view_number")
-	private int view_number;
+	@Column(name="viewNumber")
+	private int viewNumber;
 	
 	@Column(name="localisation")
 	private String localisation;
 	
 	@ManyToOne(fetch=FetchType.LAZY) 
-	@JoinColumn( name="id_user" )
+	@JoinColumn( name="userId" )
 	private User user;
 	
 	@ManyToOne(fetch=FetchType.LAZY) 
-	@JoinColumn( name="id_category" )
+	@JoinColumn( name="categoryId" )
 	private Category category;
 	
 	
@@ -66,16 +66,16 @@ public class Announcement implements  Serializable{
 	}
 
 
-	public Announcement(Long id, String title, String description, double price, byte[] picture,
-	    String publication_date, boolean is_available, int view_number, String localisation, User user,Category category) {
-		this.id = id;
+	public Announcement(Long annonceId, String title, String description, double price, byte[] picture,
+	    String publicationDate, boolean isAvailable, int viewNumber, String localisation, User user,Category category) {
+		this.annonceId = annonceId;
 		this.title = title;
 		this.description = description;
 		this.price = price;
 		this.picture = picture;
-		this.publication_date = publication_date;
-		this.is_available = is_available;
-		this.view_number = view_number;
+		this.publicationDate = publicationDate;
+		this.isAvailable = isAvailable;
+		this.viewNumber = viewNumber;
 		this.localisation = localisation;
 		this.user=user;
 		this.category=category;
@@ -88,8 +88,8 @@ public class Announcement implements  Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(picture);
-		result = prime * result + Objects.hash(description, id, is_available, localisation, price,
-				publication_date, title,  view_number);
+		result = prime * result + Objects.hash(description, annonceId, isAvailable, localisation, price,
+				publicationDate, title,  viewNumber);
 		return result;
 	}
 
@@ -103,22 +103,22 @@ public class Announcement implements  Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Announcement other = (Announcement) obj;
-		return  Objects.equals(description, other.description) && id == other.id
-				&& is_available == other.is_available && Objects.equals(localisation, other.localisation)
+		return  Objects.equals(description, other.description) && annonceId == other.annonceId
+				&& isAvailable == other.isAvailable && Objects.equals(localisation, other.localisation)
 				&& Arrays.equals(picture, other.picture)
 				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
-				&& Objects.equals(publication_date, other.publication_date) && Objects.equals(title, other.title)
-			    && view_number == other.view_number;
+				&& Objects.equals(publicationDate, other.publicationDate) && Objects.equals(title, other.title)
+			    && viewNumber == other.viewNumber;
 	}
 
 
-	public Long getId() {
-		return id;
+	public Long getAnnonceId() {
+		return annonceId;
 	}
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setAnnonceId(Long annonceId) {
+		this.annonceId = annonceId;
 	}
 
 
@@ -162,33 +162,33 @@ public class Announcement implements  Serializable{
 	}
 
 
-	public String getPublication_date() {
-		return publication_date;
+	public String getPublicationDate() {
+		return publicationDate;
 	}
 
 
-	public void setPublication_date(String string) {
-		this.publication_date = string;
+	public void setPublicationDate(String string) {
+		this.publicationDate = string;
 	}
 
 
-	public boolean getIs_available() {
-		return is_available;
+	public boolean getIsAvailable() {
+		return isAvailable;
 	}
 
 
-	public void setIs_available(boolean is_available) {
-		this.is_available = is_available;
+	public void setIsAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
 	}
 
 
-	public int getView_number() {
-		return view_number;
+	public int getViewNumber() {
+		return viewNumber;
 	}
 
 
-	public void setView_number(int view_number) {
-		this.view_number = view_number;
+	public void setViewNumber(int viewNumber) {
+		this.viewNumber = viewNumber;
 	}
 
 
@@ -223,8 +223,8 @@ public class Announcement implements  Serializable{
 
 	@Override
 	public String toString() {
-		return "Announcement [id=" + id + ", title=" + title + ", description=" + description + ", price=" + price + ", picture=" + Arrays.toString(picture) + ", publication_date="
-				+ publication_date + ", is_available=" + is_available + ", view_number=" + view_number
+		return "Announcement [annonceId=" + annonceId + ", title=" + title + ", description=" + description + ", price=" + price + ", picture=" + Arrays.toString(picture) + ", publicationDate="
+				+ publicationDate + ", isAvailable=" + isAvailable + ", viewNumber=" + viewNumber
 				+ ", localisation=" + localisation + "]";
 	}
 	

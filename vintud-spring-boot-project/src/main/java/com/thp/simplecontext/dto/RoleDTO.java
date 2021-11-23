@@ -2,21 +2,21 @@ package com.thp.simplecontext.dto;
 
 public class RoleDTO {
 	
-	private int id ;
+	private Long roleId ;
 	private String nom ;
-	public RoleDTO(int id, String nom) {
+	public RoleDTO(Long roleId, String nom) {
 		super();
-		this.id = id;
+		this.roleId = roleId;
 		this.nom = nom;
 	}
 	public RoleDTO() {
 		super();
 	}
-	public int getId() {
-		return id;
+	public Long getRoleId() {
+		return roleId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setRoleId(Long roleId) {
+		this.roleId = roleId;
 	}
 	public String getNom() {
 		return nom;
@@ -26,7 +26,7 @@ public class RoleDTO {
 	}
 	@Override
 	public String toString() {
-		return "RoleDTO [id=" + id + ", nom=" + nom + "]";
+		return "RoleDTO [roleId=" + roleId + ", nom=" + nom + "]";
 	}
 	
 	
