@@ -13,16 +13,16 @@ import com.thp.simplecontext.service.AnnouncementService;
 public class AnnouncementServiceImpl implements AnnouncementService {
 
 	@Autowired
-	AnnouncementRepository announcement  ;
+	AnnouncementRepository announcementRepository  ;
 	
 	@Override
 	public List<Announcement> findAll() {
-		return announcement.findAll() ;
+		return announcementRepository.findAll() ;
 	}
 	@Override
 	public void insertAnnouncement(Announcement annonce) {
 	
-		announcement.save(annonce);
+		announcementRepository.save(annonce);
 	}
 
 	@Override

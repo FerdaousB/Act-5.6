@@ -1,5 +1,6 @@
 package com.thp.simplecontext.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,8 +37,8 @@ public class RoleServiceImpl implements RoleService{
 	
 	@Override
 	public RoleDTO updateRole(RoleDTO roleDTO) {
-	    
-		return updateRole(roleDTO);
+		
+		return insertRole(roleDTO);
 	}
 	
 	
@@ -60,16 +61,20 @@ public class RoleServiceImpl implements RoleService{
 		 return roleDTO ;
 	}
 
-
-	
-
-	
-	
-
 	@Override
 	public List<RoleDTO> findAll() {
-
-		return null;
+		
+		List<Role> roles = roleRepository.findAll();
+		List<RoleDTO> rolesDTO = new ArrayList<>();
+		
+		for(int i=0 ; i< roles.size(); i++)
+		{
+			rolesDTO.add(modelMapper.map(roles.get(i), RoleDTO.class));
+		}
+		roleRepository.findAll();
+		
+				
+				return rolesDTO ;
 	}
 
 

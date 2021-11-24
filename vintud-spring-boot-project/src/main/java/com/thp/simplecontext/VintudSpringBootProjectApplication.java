@@ -1,11 +1,9 @@
-package com.thp.spring.simplecontext;
+package com.thp.simplecontext;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class VintudSpringBootProjectApplication {
 
 	

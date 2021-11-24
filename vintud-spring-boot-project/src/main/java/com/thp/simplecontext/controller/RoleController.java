@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thp.simplecontext.dto.RoleDTO;
-import com.thp.simplecontext.service.RoleService;
+import com.thp.simplecontext.serviceImpl.RoleServiceImpl;
 
 
 @RestController
@@ -20,9 +20,10 @@ import com.thp.simplecontext.service.RoleService;
 public class RoleController {
 	
 	@Autowired
-	private RoleService roleService; 
+	private RoleServiceImpl roleService; 
 	
-	@DeleteMapping(value = "/roles")
+	
+	@GetMapping(value = "/roles")
 	public List<RoleDTO> findAllRole() {
 
 		return roleService.findAll();
