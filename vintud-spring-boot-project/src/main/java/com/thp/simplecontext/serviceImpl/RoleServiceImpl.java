@@ -64,8 +64,8 @@ public class RoleServiceImpl implements RoleService{
 	@Override
 	public List<RoleDTO> findAll() {
 		
-		List<Role> roles = roleRepository.findAll();
-		List<RoleDTO> rolesDTO = new ArrayList<>();
+		ArrayList<Role> roles = (ArrayList<Role>) roleRepository.findAll();
+		ArrayList<RoleDTO> rolesDTO = new ArrayList<>();
 		
 		for(int i=0 ; i< roles.size(); i++)
 		{

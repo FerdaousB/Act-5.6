@@ -19,7 +19,7 @@ public class Category implements Serializable{
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO) 
     @Column(name="categoryId")
-	private Long id ;
+	private Long categoryId ;
 	 
 	@Column(name="name")
 	private String name  ;
@@ -32,20 +32,20 @@ public class Category implements Serializable{
 	}
 
 
-	public Category(Long id, String name, String description) {
-		this.id = id;
+	public Category(Long categoryId, String name, String description) {
+		this.categoryId = categoryId;
 		this.name = name;
 		this.description = description;
 	}
 
 
-	public Long getId() {
-		return id;
+	public Long getCategoryId() {
+		return categoryId;
 	}
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
 	}
 
 
@@ -71,7 +71,7 @@ public class Category implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + "]";
+		return "Category [categoryId=" + categoryId + ", name=" + name + ", description=" + description + "]";
 	}
 	
 	}
